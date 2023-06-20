@@ -69,4 +69,4 @@ export default Map;
 
 - [Next.js data fetching](https://blog.devahoy.com/tutorials/learn-nextjs/05-data-fetching)
 - [How to use React Context with TypeScript](https://blog.logrocket.com/how-to-use-react-context-typescript/)
-- [Next JS + Leaflet Map Tutorial](https://www.youtube.com/watch?v=Ody2U-fJ580) -
+- [Next JS + Leaflet Map Tutorial](https://www.youtube.com/watch?v=Ody2U-fJ580)
