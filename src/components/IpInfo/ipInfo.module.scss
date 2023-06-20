@@ -1,0 +1,17 @@
+.infoSection {
+  @apply px-7 md:text-left;
+  p {
+    @apply text-xs font-semibold text-gray-500 tracking-widest uppercase mb-3;
+  }
+  h2 {
+    @apply font-medium text-2xl/7;
+  }
+}
+
+.divider {
+  @apply md:border-r md:border-gray-200;
+}
+
+.wFullMargin {
+  width: calc(100% - 48px);
+}

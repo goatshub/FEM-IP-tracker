@@ -1,0 +1,10 @@
+.map {
+  width: 100%;
+  height: calc(100vh - 230px);
+  position: absolute;
+  bottom: 0;
+  z-index: 0;
+  @media screen and (max-width: 767px) {
+    height: calc(100vh - 280px);
+  }
+}

@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-size: 14px;
+  @screen md {
+    font-size: 16px;
+  }
+}
+
+.leaflet-control-container {
+  position: absolute;
+  right: 56px;
+  bottom: 100px;
+}
+.leaflet-control-attribution {
+  display: contents;
+}
