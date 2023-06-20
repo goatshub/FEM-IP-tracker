@@ -50,6 +50,7 @@ Users should be able to:
 - [React Hook Form](https://react-hook-form.com/) - For form
 - [Leaflet](https://leafletjs.com/) - For interactive maps
 - [React Leaflet](https://react-leaflet.js.org/) - For React Leaflet binding
+- [IP api](https://ipapi.co/) - IP Location API
 
 ### What I learned
 
@@ -64,6 +65,8 @@ const Map = dynamic(() => import("./Map"), {
 });
 export default Map;
 ```
+
+Another issue I faced was that I used https://ip-api.com/ which only has http endpoint available. It worked find during development but couldn't work on deployment due to insecure XMLHttpRequest endpoint. I have to switch to https://ipapi.co/
 
 ### Useful resources
 

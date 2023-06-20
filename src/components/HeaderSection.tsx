@@ -27,12 +27,12 @@ const HeaderSection = () => {
   //onload, get user's IP data
   useEffect(() => {
     axios
-      .get("http://ip-api.com/json/")
+      .get("https://ipapi.co/json/")
       .then((res) => res.data)
       .then((data) => {
-        if (data?.message) {
+        if (data?.reason) {
           //alert error
-          alert(data?.message);
+          alert(data?.reason);
         } else {
           //save data
           updateIpData(data);
@@ -50,11 +50,11 @@ const HeaderSection = () => {
   });
   const onSubmit: SubmitHandler<Inputs> = async (formData) => {
     const { ipInput } = formData;
-    const res = await axios.get(`http://ip-api.com/json/${ipInput}`);
+    const res = await axios.get(`https://ipapi.co/${ipInput}/json/`);
     const { data } = res;
-    if (data?.message) {
+    if (data?.reason) {
       //alert error
-      alert(data?.message);
+      alert(data?.reason);
     } else {
       //save data
       updateIpData(data);
@@ -65,8 +65,8 @@ const HeaderSection = () => {
     <div
       className="text-center grid justify-items-center grid-cols-1 
       gap-5 z-10
-      bg-cover bg-origin-padding
       bg-[url('/images/pattern-bg-desktop.png')]
+      bg-cover bg-center
       relative w-full p-6  pb-[200px] min-[293px]:pb-[180px] md:pb-[95px] "
     >
       <h1 className="text-white text-3xl font-medium">IP Address Tracker</h1>

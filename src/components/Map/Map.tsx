@@ -9,7 +9,7 @@ import LocationMarker from "./LocationMarker";
 const Map = () => {
   const { IpData } = useContext(IpContext) as IpContextType;
   if (IpData) {
-    const { lat, lon } = IpData;
+    const { latitude: lat, longitude: lon } = IpData;
     return (
       <>
         <MapContainer

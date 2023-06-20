@@ -3,7 +3,11 @@ import Leaflet from "leaflet";
 import { useEffect } from "react";
 import { IpDataType } from "@/types/ipContext";
 
-const LocationMarker = ({ lat, lon, city }: IpDataType) => {
+const LocationMarker = ({
+  latitude: lat,
+  longitude: lon,
+  city,
+}: IpDataType) => {
   const markerIcon = new Leaflet.Icon({
     iconUrl: "/images/icon-location.svg",
     iconSize: [45, 55],

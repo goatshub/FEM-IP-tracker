@@ -1,6 +1,6 @@
 import { IpDataType } from "@/types/ipContext";
 import infoStyles from "./ipInfo.module.scss";
-const IPInfo = ({ query, city, regionName, timezone, isp }: IpDataType) => {
+const IPInfo = ({ ip, city, region, utc_offset, org }: IpDataType) => {
   return (
     <div
       className={`
@@ -10,21 +10,21 @@ const IPInfo = ({ query, city, regionName, timezone, isp }: IpDataType) => {
     >
       <div className={`${infoStyles.infoSection} ${infoStyles.divider}`}>
         <p>IP Address</p>
-        <h2>{query}</h2>
+        <h2>{ip}</h2>
       </div>
       <div className={`${infoStyles.infoSection} ${infoStyles.divider}`}>
         <p>Location</p>
         <h2>
-          {city}, {regionName}
+          {city}, {region}
         </h2>
       </div>
       <div className={`${infoStyles.infoSection} ${infoStyles.divider}`}>
         <p>Timezone</p>
-        <h2>{timezone}</h2>
+        <h2>UTC {utc_offset}</h2>
       </div>
       <div className={`${infoStyles.infoSection}`}>
         <p>ISP</p>
-        <h2>{isp}</h2>
+        <h2>{org}</h2>
       </div>
     </div>
   );
