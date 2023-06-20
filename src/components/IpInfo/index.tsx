@@ -4,7 +4,7 @@ const IPInfo = ({ ip, city, region, utc_offset, org }: IpDataType) => {
   return (
     <div
       className={`
-        grid grid-cols-1 md:grid-cols-4 gap-y-6 bg-gray-100 rounded-xl py-8 px-2 shadow-xl
+        grid grid-cols-1 md:grid-cols-4 gap-y-6 bg-white rounded-xl py-8 px-2 shadow-xl
           absolute bottom-0 translate-y-1/2 ${infoStyles.wFullMargin} max-w-[68rem] z-50
     `}
     >
