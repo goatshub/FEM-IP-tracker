@@ -27,8 +27,12 @@ const HeaderSection = () => {
   //onload, get user's IP data
   useEffect(() => {
     axios
-      .get("https://ipapi.co/json/")
-      .then((res) => res.data)
+      .get("/api/ipapi")
+      .then((res) => {
+        if(res?.status !== 200){
+          throw new Error(res?.statusText)
+        }
+        return res.data})
       .then((data) => {
         if (data?.reason) {
           //alert error
@@ -37,7 +41,8 @@ const HeaderSection = () => {
           //save data
           updateIpData(data);
         }
-      });
+      })
+      .catch(err => alert(err));
   }, []);
 
   //handle form
@@ -48,17 +53,23 @@ const HeaderSection = () => {
   } = useForm<Inputs>({
     resolver: yupResolver(schema),
   });
-  const onSubmit: SubmitHandler<Inputs> = async (formData) => {
+  const onSubmit: SubmitHandler<Inputs> = (formData) => {
     const { ipInput } = formData;
-    const res = await axios.get(`https://ipapi.co/${ipInput}/json/`);
-    const { data } = res;
-    if (data?.reason) {
-      //alert error
-      alert(data?.reason);
-    } else {
-      //save data
-      updateIpData(data);
-    }
+    axios.get(`/api/ipapi/${ipInput}`).then((res) => {
+      if(res?.status !== 200){
+        throw new Error(res?.statusText)
+      }
+      return res.data})
+    .then((data) => {
+      if (data?.reason) {
+        //alert error
+        alert(data?.reason);
+      } else {
+        //save data
+        updateIpData(data);
+      }
+    })
+    .catch(err => alert(err));
   };
 
   return (
